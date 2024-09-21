@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <input type="text" id="inputText" />
+    <button onclick="printLetters()">Print Letters</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+          let a = 0;
+          let e = 0;
+          let i = 0;
+          let o = 0;
+          let u = 0;
+          let y = 0;
+          let æ = 0;
+          let ø = 0;
+          let å = 0;
+
+        function printLetters() {
+          let letterString = document.getElementById('inputText').value;
+
+          for(let index=0; index < letterString.length; index++) {
+             let vocalLetter = letterString.charAt(index);
+
+          
+          if (vocalLetter == 'a') {
+            a++;
+          }
+        else if (vocalLetter == 'e') {
+            e++;
+          }
+
+          else if (vocalLetter == 'i') {
+            i++;
+          }
+
+          else if (vocalLetter == 'o') {
+            o++;
+          }
+
+          else if (vocalLetter == 'u') {
+            u++;
+          }
+
+          else if (vocalLetter == 'y') {
+            y++;
+          }
+
+          else if (vocalLetter == 'æ') {
+            æ++;
+          }
+
+          else if (vocalLetter == 'ø') {
+            ø++;
+          }
+
+          else if (vocalLetter == 'å') {
+            å++;
+          }
+        }
+
+          let allResult = a+e+i+o+u+y+æ+ø+å;
+
+          let result = `
+          A: ${a} <br>
+          E: ${e} <br>
+          I: ${i} <br>
+          O: ${o} <br>
+          U: ${u} <br>
+          Y: ${y} <br>
+          Æ: ${æ} <br>
+          Ø: ${ø} <br>
+          Å: ${å} <br>
+          
+          Alle vokaler: ${allResult}`;
+
+          document.getElementById('app').innerHTML = result;
+      }
+
+    function reset() {
+        a = 0;
+        e = 0;
+        i = 0;
+        o = 0;
+        u = 0;
+        y = 0;
+        æ = 0;
+        ø = 0;
+        å = 0;
+
+        document.getElementById('inputText').value = "";
+        document.getElementById('app').innerHTML = "";
+    }
+
+    </script>
+  </body>
+</html>
